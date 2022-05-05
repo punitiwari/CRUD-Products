@@ -1,0 +1,22 @@
+<div class="container-fluid">
+    <div style="margin-top: 2%;">
+        <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="">Product List</a>
+                <span class="navbar-text">
+                    <button type="button" class="btn btn-primary" (click)="goToCreate()">Create</button>
+                </span>
+            </div>
+        </nav>
+    </div>
+    <div>
+        <ul class="list-group">
+            <li *ngFor="let product of products_list" class="list-group-item">{{product.product_Name}} <span class="btn-group alignRight" role="group" aria-label="Basic example">
+                <button type="button" class="btn btn-info" (click)="goToUpdate(product)">Update</button>&nbsp;
+                <button type="button" class="btn btn-danger" (click)="delete(product.id)">Delete</button>
+              </span></li>
+            
+          </ul>
+    </div>
+</div>
+<!--  -->

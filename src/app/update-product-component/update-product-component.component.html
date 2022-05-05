@@ -1,0 +1,30 @@
+<div class="container-fluid">
+    <div style="margin-top: 2%;">
+        <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="">Update Product</a>
+                <!-- <span class="navbar-text">
+                    <button type="button" class="btn btn-primary" (click)="goToCreate()">Create</button>
+                </span> -->
+            </div>
+        </nav>
+    </div>
+    <div>
+        <form #addProductForm="ngForm">
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <div class="mb-3">
+                        <label class="form-label">Product Name</label>
+                        <input type="text" [class.is-invalid]="product_name.invalid && product_name.touched" class="form-control"
+                         name="productName" [(ngModel)]="productName" required #product_name="ngModel">
+                         <small [class.danger]="product_name.valid || product_name.untouched">Name is required</small>
+                    </div>
+                    <div class="mb-3 text-center">
+                        <button class="btn btn-primary" type="submit" (click)="submit()" [disabled]="addProductForm.form.invalid">Update</button>
+                    </div>
+                </li>
+            </ul>
+        </form>
+    </div>
+</div>
+<!--  -->
